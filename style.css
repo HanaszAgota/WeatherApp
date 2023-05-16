@@ -5,27 +5,8 @@
   }
   
   #root {
-    display: flex;
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(150deg, rgb(28, 196, 146) 45%, rgba(31, 122, 220) 100%); 
-  }
-  
-  .weather-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    position: absolute;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, -5%);
   }
   
   .image {
@@ -36,8 +17,11 @@
   input {
     height: 50px;
     width: 450px;
-    border-radius: 30px;
+    border-radius: 50px;
     border: none;
+    padding-left: 15px;
+    font-size: larger;
+    margin-bottom: 200px;
   }
   
   button {
@@ -45,12 +29,25 @@
     width: 50px;
     border-radius: 30px;
     border: none;
+    margin-left: 550px;
+    margin-top: 30px;
+    background-color: white;
   }
   
-  /* .header {
-    position: absolute;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, -5%);
-  
-  } */
+  h1 {
+    font-size: 80px;
+    font-weight: 300;
+    color: white;
+  }
+
+  #condition {
+    width: 150px;
+    height: 150px;
+  }
+
+  section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
