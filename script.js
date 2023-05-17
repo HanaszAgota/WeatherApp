@@ -30,9 +30,6 @@ function getElements() {
     condition.id = "condition";
     condition.src = response.current.condition.icon;
 
-    const condition1 = document.createElement("p");
-    condition1.classList.add("condition-text");
-
     const temp = document.createElement("section");
     temp.classList.add("temperature");
 
@@ -117,9 +114,6 @@ function eventListener() {
       condition.classList.add("condition");
       condition.src = data.current.condition.icon;
 
-      const condition1 = document.createElement("p");
-      condition1.classList.add("condition-text");
-
       const temp = document.createElement("section");
       temp.classList.add("temperature");
 
@@ -149,7 +143,6 @@ function eventListener() {
 
       timezone.append(time);
 
-      section.append(h1, condition, condition1, temp, hum, timezone);
       main.append(section);
 
       root.append(main);
