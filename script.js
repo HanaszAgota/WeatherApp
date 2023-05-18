@@ -27,7 +27,7 @@ function getElements() {
     section.classList.add("section");
 
     const condition = document.createElement("img");
-    condition.id = "condition";
+    condition.classList.add("condition");
     condition.src = response.current.condition.icon;
 
     const temp = document.createElement("section");
@@ -44,35 +44,31 @@ function getElements() {
 
     const hum = document.createElement("section");
     hum.classList.add("humidity");
-    hum.innerText = "Humidity";
+    hum.innerText = "💦" + "Humidity";
 
     const humidity = document.createElement("div");
     humidity.innerText = response.current.humidity + "%";
     hum.append(humidity);
 
-    const timezone = document.createElement("section");
-    timezone.classList.add("timezone");
-    timezone.innerText = "Timezone";
+    const wind = document.createElement("section");
+    wind.classList.add("wind");
+    wind.innerText = "💨" + "Wind Speed";
 
-    const time = document.createElement("div");
-    time.innerHTML = response.location.tz_id;
+    const windSpeed = document.createElement("div");
+    windSpeed.innerHTML = response.current.wind_kph + " km/h";
 
-    timezone.append(time);
+    wind.append(windSpeed);
 
-    section.append(h1, condition, condition1, temp, hum, timezone);
+    section.append(condition, temp, h1, hum, wind);
 
     main.append(section);
 
     root.append(main);
   };
 
-  const searchButton = document.createElement('button');
-
-  const searchIMG = document.createElement('img');
-  searchIMG.classList.add('image');
-  searchIMG.src = 'search.png';
-  searchButton.appendChild(searchIMG);
-  root.append(searchButton);
+  const container = document.createElement("container");
+  container.id = "container"
+  root.append(container);
 
   const label = document.createElement("label");
   label.setAttribute("for", "input");
@@ -83,11 +79,21 @@ function getElements() {
   input.setAttribute("list", "search");
   input.autocomplete = "off"; //kell ez?
   input.placeholder = "Please add a city";
+  container.append(input)
 
   const dataList = document.createElement("datalist");
   dataList.id = "search";
 
-  root.append(label, input, dataList);
+  const searchButton = document.createElement('button');
+
+  const searchIMG = document.createElement('img');
+  searchIMG.classList.add('image');
+  searchIMG.src = 'search.png';
+  searchButton.appendChild(searchIMG);
+
+  container.append(searchButton, label, dataList);
+
+  root.append(container);
   a();
 }
 getElements();
@@ -134,14 +140,16 @@ function eventListener() {
       humidity.innerText = data.current.humidity + "%";
       hum.append(humidity);
 
-      const timezone = document.createElement("section");
-      timezone.classList.add("timezone");
-      timezone.innerText = "Timezone";
+      const wind = document.createElement("section");
+      wind.classList.add("wind");
+      wind.innerText = "Wind Speed";
 
-      const time = document.createElement("div");
-      time.innerHTML = data.location.tz_id;
+      const windSpeed = document.createElement("div");
+      windSpeed.innerHTML = data.current.wind_kph + " km/h";
 
-      timezone.append(time);
+      wind.append(windSpeed);
+
+      section.append(condition, temp, h1, hum, wind);
 
       main.append(section);
 

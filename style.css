@@ -5,8 +5,19 @@
   }
   
   #root {
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    flex-direction: column;
     min-height: 100vh;
     background: linear-gradient(150deg, rgb(28, 196, 146) 45%, rgba(31, 122, 220) 100%); 
+  }
+
+  #container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
   }
   
   .image {
@@ -22,25 +33,34 @@
     padding-left: 15px;
     font-size: larger;
     margin-bottom: 200px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-bottom: 100px;
   }
   
   button {
     height: 50px;
     width: 50px;
-    border-radius: 30px;
+    border-radius: 50px;
     border: none;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 800px;
+    margin-top: 30px; */
   }
   
   h1 {
-    font-size: 80px;
+    font-size: 50px;
     font-weight: 300;
     color: white;
   }
 
-  #condition {
-    width: 150px;
-    height: 150px;
+  .condition {
+    width: 200px;
+    height: 200px;
   }
 
   section {
@@ -49,3 +69,29 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .temperature {
+    font-size: 90px;
+    font-weight: 300;
+    color: white;
+  }
+
+  .humidity {
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin-right: 200px;
+    margin-top: 60px;
+  }
+
+  .wind {
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin-left: 200px;
+    margin-top: -46px;
+    margin-bottom: 0px;
+  }
+
+  
+  
